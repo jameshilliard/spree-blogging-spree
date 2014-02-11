@@ -30,7 +30,7 @@ Installation
 
 Add to your Gemfile:
 
-    gem 'spree_blogging_spree', :github => 'stefansenk/spree-blogging-spree'
+    gem 'spree_blogging_spree', :github => 'b8in/spree-blogging-spree'
 
 Run:
 
@@ -65,4 +65,4 @@ Some additional features could include:
 - Add Facebook Open Graph meta tags.
 
 
-Copyright (c) 2013 Stefan Senk, released under the New BSD License
+Copyright (c) 2013 Stefan Senk & b8in, released under the New BSD License
