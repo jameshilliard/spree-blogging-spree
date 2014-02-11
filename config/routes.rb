@@ -5,12 +5,14 @@ Spree::Core::Engine.routes.draw do
   
   resources :blog_entries
 
-  match '/blog/tag/:tag', :to => 'blog_entries#tag', :as => :blog_tag
-  match '/blog/category/:category', :to => 'blog_entries#category', :as => :blog_category
-  match '/blog/author/:author', :to => 'blog_entries#author', :as => :blog_author
-  match '/blog/:year/:month/:day/:slug', :to => 'blog_entries#show', :as => :blog_entry_permalink
-  match '/blog/:year(/:month)(/:day)', :to => 'blog_entries#archive', :as => :news_archive,
-    :constraints => {:year => /(19|20)\d{2}/, :month => /[01]?\d/, :day => /[0-3]?\d/}
-  match '/blog/feed', :to => 'blog_entries#feed', :as => :blog_feed, :format => :rss
-  match '/blog', :to => 'blog_entries#index', :as => :blog
+  namespace "#{Spree::Config['blog_alias']}", module: false do
+    match '/tag/:tag', :to => 'blog_entries#tag', :as => :tag
+    match '/category/:category', :to => 'blog_entries#category', :as => :category
+    match '/author/:author', :to => 'blog_entries#author', :as => :author
+    match '/:year/:month/:day/:slug', :to => 'blog_entries#show', :as => :entry_permalink
+    match '/:year(/:month)(/:day)', :to => 'blog_entries#archive', :as => :archive,
+          :constraints => {:year => /(19|20)\d{2}/, :month => /[01]?\d/, :day => /[0-3]?\d/}
+    match '/feed', :to => 'blog_entries#feed', :as => :feed, :format => :rss
+    match '/', :to => 'blog_entries#index'
+  end
 end
