@@ -2,10 +2,8 @@ Spree::Core::Engine.routes.draw do
   namespace :admin do
     resources :blog_entries
   end
-  
-  resources :blog_entries
 
-  scope "#{Spree::Config['blog_alias']}", as: 'blog' do
+  scope Spree::Config['blog_alias'], as: 'blog' do
     match '/tag/:tag', :to => 'blog_entries#tag', :as => :tag
     match '/category/:category', :to => 'blog_entries#category', :as => :category
     match '/author/:author', :to => 'blog_entries#author', :as => :author
