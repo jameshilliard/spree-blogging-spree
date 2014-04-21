@@ -30,9 +30,7 @@ Installation
 
 Add to your Gemfile:
 
-```ruby
-gem 'spree_blogging_spree', github: 'stefansenk/spree-blogging-spree'
-```
+    gem 'spree_blogging_spree', :github => 'tomfarm/spree-blogging-spree'
 
 Bundle your dependencies and run the installation generator:
 
@@ -76,4 +74,4 @@ Some additional features could include:
 - Add Facebook Open Graph meta tags.
 
 
-Copyright (c) 2014 Stefan Senk, released under the New BSD License
+Copyright (c) 2013 Stefan Senk & b8in, released under the New BSD License
