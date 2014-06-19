@@ -1,0 +1,2 @@
+<!-- insert_after "div[data-hook='homepage_products']" -->
+<%= render :partial => 'spree/blog_entries/blog_entries' %>
