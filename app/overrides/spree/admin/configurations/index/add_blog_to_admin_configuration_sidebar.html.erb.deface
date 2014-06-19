@@ -1,0 +1,5 @@
+<!-- insert_bottom "[data-hook='admin_configurations_menu']" -->
+<tr>
+  <td><%= link_to t(:spree_blog), admin_blog_entries_path %></td>
+  <td><%= t(:blog_entries) %></td>
+</tr>
